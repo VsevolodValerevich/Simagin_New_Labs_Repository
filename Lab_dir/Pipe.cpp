@@ -33,3 +33,11 @@ void Pipe::readConsole() {
 	}
 	repairstat = (repInput == 1);
 }
+
+void Pipe::printConsole() const {
+	cout << "\nИнформация о трубе\n";
+	cout << "Название: " << name << "\n";
+	cout << "Длина: " << length << "км\n";
+	cout << "Диаметр: " << diameter << "мм\n";
+	cout << "Статус: " << (repairstat ? "Не" : "") << "работает";
+}

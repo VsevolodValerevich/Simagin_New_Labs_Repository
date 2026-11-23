@@ -41,3 +41,17 @@ void Pipe::printConsole() const {
 	cout << "Диаметр: " << diameter << "мм\n";
 	cout << "Статус: " << (repairstat ? "Не" : "") << "работает";
 }
+
+void Pipe::changeRep(bool status) {
+	repairstat = status;
+}
+
+void Pipe::save(ostream& out) const {
+	out << name << " " << length << " " << diameter << " " << repairstat << "\n";
+}
+
+void Pipe::load(istream& in) {
+	in >> name >> length >> diameter >> repairstat;
+}
+
+

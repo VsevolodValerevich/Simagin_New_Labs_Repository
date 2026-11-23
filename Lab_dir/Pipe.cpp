@@ -54,4 +54,18 @@ void Pipe::load(istream& in) {
 	in >> name >> length >> diameter >> repairstat;
 }
 
+string Pipe::getName() const {
+	return name;
+}
 
+double Pipe::getLength() const {
+	return length;
+}
+
+double Pipe::getDiameter() const {
+	return diameter;
+}
+
+bool Pipe::getRepstat() const {
+	return repairstat;
+}

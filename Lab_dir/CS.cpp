@@ -29,5 +29,55 @@ void CS::readConsole() {
 	cin >> name;
 }
 
+void CS::printConsole() const {
+	cout << "Информация о Компрессорной станции\n";
+	cout << "Общее количество цехов: " << totalWS << "\n";
+	cout << "Число работающих цехов: " << workingWS << "\n";
+	cout << "Класс станции: " << stationClass;
+}
 
+bool CS::startWs() {
+	if (workingWS < totalWS) {
+		workingWS++;
+		return true;
+	}
+	else {
+		return false;
+	}
+	
+}
 
+bool CS::stopWs() {
+	if (workinWS > 0) {
+		workingWS--;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void CS::save(ostream& out) const {
+	out << name << " " << totalWS << " " << workingWS << " " << stationClass << "\n";
+}
+
+void CS::load(istream& in) {
+	in >> name >> totalWS >> workingWS >> stationClass;
+}
+
+string CS::getName() const {
+	return name
+
+}
+
+int CS::getTotalWS() const {
+	return totalWS
+}
+
+int CS::getWorkingWS() const {
+	return workingWS
+}
+
+string CS::getStationClass() const {
+	return stationClass
+}

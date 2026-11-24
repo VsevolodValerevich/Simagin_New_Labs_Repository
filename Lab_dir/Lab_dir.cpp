@@ -2,10 +2,73 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include "Pipe.h"
+#include "CS.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Pipe pipe;
+    CS cs;
+
+    bool PipeCreated = false;
+    bool CsCreated = false;
+
+    int choice;
+    
+    while (true) {
+        cout << "Лабораторная работа № 1 Симагин В.В. АА-25-07\n";
+        cout << "1. Добавить Трубу\n";
+        cout << "2. Добавить КС\n";
+        cout << "3. Просмотр всех оббектов\n";
+        cout << "4. Редактировать трубу\n";
+        cout << "5. Редактировать КС\n";
+        cout << "6. Сохранить\n";
+        cout << "7. Загрузить\n";
+        cout << "0. Выход\n";
+        cout << "Выбор: ";
+
+        while (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Ошибка! Введите число: ";
+        }
+
+        switch (choice) {
+            case 1:
+                pipe.readConsole();
+                PipeCreated = true;
+            case 2:
+                cs.readConsole();
+                CsCreated = true;
+            case 3:
+                switch(PipeCreated) {
+                    case true:
+                        pipe.printConsole();
+                    case false:
+                        cout << "Нет созданной трубы";
+                switch (CsCreated) {
+                    case true:
+                        cs.printConsole();
+                    case false:
+                        cout << "Нет созданной КС";
+            case 4:
+
+
+
+                }
+
+                }
+
+        }
+
+        
+
+
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
